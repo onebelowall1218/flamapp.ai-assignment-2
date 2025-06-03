@@ -1,36 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="8dp"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:background="@drawable/rounded_background"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:weightSum="10">
 
     <TextView
         android:id="@+id/tvDay"
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
+        android:layout_weight="3"
         android:text="Today"
+        android:textColor="@android:color/white"
         android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/tvCondition"
+    <LinearLayout
         android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_weight="3"
         android:layout_height="wrap_content"
-        android:text="Sunny"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:textSize="16sp" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvCondition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sunny"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginEnd="4dp" />
+
+        <ImageView
+            android:id="@+id/ivConditionIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="4dp"
+            android:contentDescription="Weather Icon"
+            android:src="@drawable/ic_sunny" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvMinMax"
         android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_weight="4"
         android:layout_height="wrap_content"
-        android:text="15.0°C / 25.0°C"
+        android:text="15.0° / 25.0°"
+        android:textColor="@android:color/white"
         android:textSize="16sp"
+        android:maxLines="1"
         android:gravity="end" />
 </LinearLayout>

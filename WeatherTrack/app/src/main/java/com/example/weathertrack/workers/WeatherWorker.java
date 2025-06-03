@@ -22,7 +22,7 @@ public class WeatherWorker extends Worker {
                 new MockWeatherApi()
         );
 
-        repository.fetchAndSaveWeather("SampleCity");
+        repository.fetchAndSaveWeather("Guwahati");
         return Result.success();
     }
 }

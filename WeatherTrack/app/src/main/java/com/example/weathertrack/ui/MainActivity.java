@@ -38,6 +38,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.example.weathertrack.workers.WeatherWorker;
 
+import android.widget.ImageView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -50,11 +51,14 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rvWeeklySummary;
     private WeatherSummaryAdapter adapter;
 
-    private final String defaultCity = "SampleCity";  // I can change this.
+    private final String defaultCity = "Guwahati";  // I can change this.
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
         setContentView(R.layout.activity_main);
 
         // Refresh every 6 hour (Schedule)
@@ -126,10 +130,46 @@ public class MainActivity extends AppCompatActivity {
         viewModel.refreshWeather(defaultCity);
     }
 
+    private void changeBackgroundBasedOnCondition(String condition) {
+        ImageView backgroundImage = findViewById(R.id.backgroundImage);
+
+        int backgroundRes;
+
+        switch (condition.toLowerCase()) {
+            case "sunny":
+                backgroundRes = R.drawable.bg_sunny;
+                break;
+            case "cloudy":
+                backgroundRes = R.drawable.bg_cloudy;
+                break;
+            case "rainy":
+                backgroundRes = R.drawable.bg_rainy;
+                break;
+            case "stormy":
+                backgroundRes = R.drawable.bg_stormy;
+                break;
+            case "snowy":
+                backgroundRes = R.drawable.bg_snowy;
+                break;
+            case "windy":
+                backgroundRes = R.drawable.bg_windy;
+                break;
+            case "foggy":
+                backgroundRes = R.drawable.bg_foggy;
+                break;
+            default:
+                backgroundRes = R.drawable.bg_sunny;
+                break;
+        }
+
+        backgroundImage.setImageResource(backgroundRes);
+    }
+
     private void updateCurrentWeatherUI(Weather weather) {
         tvCity.setText(weather.getCity());
         tvTemperature.setText(String.format(Locale.getDefault(), "%.1f°C", weather.getTemperature()));
         tvHumidity.setText("Humidity: " + weather.getHumidity() + "%");
         tvCondition.setText(weather.getCondition());
+        changeBackgroundBasedOnCondition(weather.getCondition());
     }
 }
