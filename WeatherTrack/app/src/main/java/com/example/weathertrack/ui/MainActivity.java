@@ -24,9 +24,20 @@ import com.example.weathertrack.ui.adapters.WeatherSummaryAdapter;
 import com.example.weathertrack.viewmodel.WeatherViewModel;
 
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import android.content.SharedPreferences;
+
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
+import androidx.work.WorkRequest;
+import androidx.work.ExistingPeriodicWorkPolicy;
+
+import java.util.concurrent.TimeUnit;
+
+import com.example.weathertrack.workers.WeatherWorker;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,6 +57,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Refresh every 6 hour (Schedule)
+        PeriodicWorkRequest weatherWork =
+                new PeriodicWorkRequest.Builder(WeatherWorker.class, 6, TimeUnit.HOURS)
+                        .build();
+
+        WorkManager.getInstance(this).enqueueUniquePeriodicWork(
+                "WeatherFetchWork",
+                ExistingPeriodicWorkPolicy.KEEP,
+                weatherWork
+        );
         tvCity = findViewById(R.id.tvCity);
         tvTemperature = findViewById(R.id.tvTemperature);
         tvHumidity = findViewById(R.id.tvHumidity);
@@ -91,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewModel.getWeeklyWeather().observe(this, weatherList -> {
             if (weatherList != null && !weatherList.isEmpty()) {
+                Collections.reverse(weatherList);
                 adapter.setWeatherList(weatherList);
             }
         });

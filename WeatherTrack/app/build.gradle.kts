@@ -51,4 +51,7 @@ dependencies {
     // ViewModel + LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel:2.7.0")
+
+    // Worker and Sync
+    implementation ("androidx.work:work-runtime:2.9.0")
 }

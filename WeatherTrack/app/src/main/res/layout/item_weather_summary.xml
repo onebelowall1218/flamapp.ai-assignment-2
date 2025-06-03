@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:gravity="center_vertical">
 
     <TextView
         android:id="@+id/tvDay"
@@ -15,18 +16,21 @@
         android:textSize="16sp" />
 
     <TextView
+        android:id="@+id/tvCondition"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="Sunny"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="16sp" />
+
+    <TextView
         android:id="@+id/tvMinMax"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:text="15.0°C / 25.0°C"
         android:textSize="16sp"
-        android:layout_marginEnd="16dp" />
-
-    <TextView
-        android:id="@+id/tvCondition"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sunny"
-        android:textSize="16sp" />
-
+        android:gravity="end" />
 </LinearLayout>
