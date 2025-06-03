@@ -22,6 +22,7 @@ WeatherTrack is an Android app that fetches and displays weather data, including
 - Displays weekly weather summary with daily max/min temperature and weather conditions.
 - Periodic background updates every 6 hours using WorkManager.
 - Simple, clean UI with RecyclerView.
+- Scroll down to refresh manually
 
 ### Architecture
 
@@ -30,7 +31,7 @@ WeatherTrack is an Android app that fetches and displays weather data, including
 - LiveData for reactive UI updates.
 - Language: Java
 
-  ![image](https://github.com/user-attachments/assets/916d6d3b-c7b7-4b4c-a9ba-b7c8015c7a2e)
+![Screenshot_2025-06-03-20-01-17-899_com miui home](https://github.com/user-attachments/assets/cd038f81-413e-4bd8-b5b7-da67b50d45fa)
 
 
 ### Setup
