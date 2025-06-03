@@ -30,8 +30,14 @@ WeatherTrack is an Android app that fetches and displays weather data, including
 - Background tasks handled by WorkManager(WeatherWorker).
 - LiveData for reactive UI updates.
 - Language: Java
+  
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/db87f78c-8a25-44f3-96d1-12a8e4969c51" width="200" alt="Home Screen"/>
+  <img src="https://github.com/user-attachments/assets/2edb9a09-ad12-45df-8942-265731911506" width="200" alt="Weather App Main"/>
+  <img src="https://github.com/user-attachments/assets/4ab2de93-9877-4226-b8a9-b010dbcaa903" width="200" alt="Weather App Weekly"/>
+  <img src="https://github.com/user-attachments/assets/5e237960-78fd-4025-8ca7-91cf375ee53d" width="200" alt="Weather App Daily"/>
+</p>
 
-![Screenshot_2025-06-03-20-01-17-899_com miui home](https://github.com/user-attachments/assets/cd038f81-413e-4bd8-b5b7-da67b50d45fa)
 
 
 ### Setup
