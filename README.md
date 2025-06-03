@@ -23,6 +23,7 @@ WeatherTrack is an Android app that fetches and displays weather data, including
 - Periodic background updates every 6 hours using WorkManager.
 - Simple, clean UI with RecyclerView.
 - Scroll down to refresh manually
+- Background change according to the weather
 
 ### Architecture
 
