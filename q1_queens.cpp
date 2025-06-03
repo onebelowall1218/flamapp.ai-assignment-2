@@ -53,7 +53,7 @@ public:
 };
 
 int main(){
-    system("cls");
+    // system("cls");
     Solution s;
     int n;
     cin>>n;

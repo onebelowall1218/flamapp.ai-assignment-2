@@ -10,7 +10,7 @@ private:
         for(int &node: adj[currNode]){
             if(!visited[node] && dfs(node, adj, visited, recurStack)){
                 return true;
-            }
+            }   
             if(recurStack[node]){
                 return true;
             }
@@ -38,7 +38,7 @@ public:
 };
 
 int main(){
-    system("cls");
+    // system("cls");
     Solution s;
     int n = 4;
     vector<vector<int>> edges = {{0, 1}, {1, 2}, {2, 3}};
